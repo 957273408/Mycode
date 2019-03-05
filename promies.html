@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // Promise 有2个特点状态不可更改 (pending 进行中,fulfilled 已成功,rejected 已失败)
+        // Promise 可以接受2个回调函数 relove(从pending转到fulfilled) reject(从pending转到rejected)
+
+        // Promise 封装 ajax
+        const getJson = (url) => {
+            const promise = new Promise((relove, reject) => {
+                let handler = function () {
+                    if (this.readyState !== 4) {
+                        return;
+                    }
+                    if (this.status === 200) {
+                        relove(this.response)
+                    } else {
+                        reject(new Error(this.statusText))
+                    }
+                }
+                let xhr = new XMLHttpRequest();
+                xhr.open('get', url);
+                xhr.onreadystatechange = handler
+                xhr.responseType = 'json'
+                xhr.setRequestHeader('Accept', 'application/json')
+                xhr.send()
+            })
+            return promise
+        }
+        let obj={
+            a:'a',
+            b:'b',
+        }
+        let obj2={
+            c:'c',
+            d:'d'
+        }
+        let obj3={...obj,...obj2}
+        console.log(obj3)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

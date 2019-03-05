@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // instanceof 用于引用类型数据类型检测 原理是通过原型链查找构造函数
+        let arr=[];
+        let obj={};
+        let fn=function(){}
+        let sb=Symbol('23')
+        console.log(arr instanceof Array);//true
+        console.log(arr instanceof Object);//true
+        console.log(arr instanceof Function);//false
+
+        console.log(obj instanceof Array)//false
+        console.log(obj instanceof Object)//true
+        console.log(obj instanceof Function)//false
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

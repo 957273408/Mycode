@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="changeurl()">change</button>
+    <script>
+        // vue-router有两种模式 hash模式 和h5新引入的history模式 
+        // #hash值改变不会触发页面刷新,但是我们可以通过hashchange事件来
+        // 来监听hash值的改变,通过这个事件来实现页面更新的效果
+        location.hash
+        window.addEventListener('hashchange', () => {
+            console.log(1111);
+        })
+        // html5 推出后新增了2个api pushState和replaceState可以改变url而不刷新页面
+        // pushState和replaceState通常需要配合popState事件使用
+
+        history.pushState({}, 'title');
+        // pushState有3个参数 第一个参数是个js对象 ,第二个参数是个标题 ,第三个参数是个url 必须跟当前的url同源否则报错
+        history.pushState({}, "");
+        // replaceState基本和pushState相同区别就是不是新建一个历史记录而是修改历史记录
+        history.replaceState({}, 'tiele')
+        // 当游览器历史记录发生修改或者新建事都会触发popstate时间
+        window.onpopstate = event => {
+            location.href = 'www.baidu.com'
+        }
+    </script>
+</body>
+
+</html>

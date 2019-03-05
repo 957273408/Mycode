@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Ani(name, age) {
+            this.name = name;
+            this.age = age
+        }
+        Ani.prototype.eat = function () {
+            console.log(this.name);
+        }
+
+        function Sun(name, age, yellow) {
+            Ani.call(this, name, age)
+            this.yellow = yellow
+        }
+        Sun.prototype = Ani.prototype;
+        Sun.prototype.constructor = Sun
+
+        let s2 = new Ani('李四', 16);
+
+        let s1 = new Sun('王五', 16)
+
+        console.log(s2)
+        console.log(s1)
+        s2.eat()
+        s1.eat()
+        console.log(s2.__proto__.constructor)
+    </script>
+    <script>
+        let arr = [1, 2, 3, 4, 8]
+        let arr2 = [1, 2, 3, 9, 4]
+        let ar=[...new Set([...arr,...arr2])]
+        console.log(ar)
+    </script>
+</body>
+
+</html>

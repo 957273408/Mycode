@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .bule{
+            background-color: blue;
+            /* 第二种创建BFC清除浮动 */
+            /* position: absolute/fixed  */
+            /* float: left; */
+            /* overflow: !=visible; */
+            /* display: inline-block/flex/block; */
+
+            /* 第三种方法 父级设置高度 */
+             
+        }
+        /* 第一种方法:伪元素清除浮动 */
+        /* .bule::after{
+            content: '';
+            clear: both;
+            display: block;
+        } */
+        
+        .red{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            float: left
+        }
+        .green{
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="bule">
+        <div class="red"></div>
+        <div class="green"></div>
+    </div>
+    <script>
+        let num=1234567890.23
+        let arr=num.toString().split('.')
+        function arr()
+    </script>
+</body>
+</html>

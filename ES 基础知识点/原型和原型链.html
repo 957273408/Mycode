@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //原型和原型链
+        /*
+        实例有个__proto__属性指向其构造函数的原型
+        原型其实是一个对象
+        原型有个prototype属性指向他的原型,constructor指向其构造函数
+        */
+        // 原型链我理解是原型通过prototype连接形成,理解原型链主要有2点
+        // 1,属性的查找,当实例查找属性或者方法是,会先在当前实例对象内查找,没有找到则去原型里查找,如果原型里没有找到则去下一级原型查找,直到查到到Object.prototype,如还没找到则输出undefined
+        // 2.属性的赋值,只在当前实例对象内修改,如没有这个属性则创建一个
+        // 原型链 
+        function Constructor(){}
+        let s1=new Constructor()
+        console.dir(s1)
+        console.log(s1.__proto__===Constructor.prototype)//true
+        console.log(Constructor.prototype.__proto__===Object.prototype)//
+        console.log(Object.prototype.__proto__===null)
+        // console.log(Function.__proto__===Function)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

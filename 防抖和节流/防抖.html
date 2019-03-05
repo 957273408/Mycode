@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="inp">
+</body>
+
+</html>
+<script>
+    let inp = document.querySelector('#inp')
+    inp.addEventListener('keyup', debounce(bb, 1000, true))
+
+    // 防抖函数 
+    function debounce(fn, wait) {
+        console.log(arguments)
+        console.log("---------------------")
+        let time = null
+        return function () {
+            let content = this
+            // console.log(this);
+            let args = arguments
+            // console.log(arguments);
+
+            if (time) clearTimeout(time)
+            // apply,call都会执行一次返回函数的返回值,
+            // apply与call的区别 
+            // apply的第二个参数传入的是参数数组,
+            // call的形参是写在第二个参数之后
+            // bind不会执行返回的是函数体
+            time = setTimeout(fn.bind(content, ...arguments), wait)
+        }
+    }
+
+    function bb(w, e) {
+        console.log(w, e);
+        alert(this.value)
+    }
+
+   
+    // function debounce(fn, wait, immediate) {
+    //     let timer = null
+
+    //     return function () {
+    //         let args = arguments
+    //         let context = this
+
+    //         if (immediate && !timer) {
+    //             fn.apply(context, args)
+    //         }
+
+    //         if (timer) clearTimeout(timer)
+    //         timer = setTimeout(() => {
+    //             fn.apply(context, args)
+    //         }, wait)
+    //     }
+    // }
+</script>

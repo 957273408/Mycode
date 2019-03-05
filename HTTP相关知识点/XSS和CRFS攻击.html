@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            XSS攻击,恶意植入代码.当用户运行了这个代码是,通过js拦截到cookie将cookie
+            发送到其服务器.从而获取到用户信息
+                防范方法 :cookie设置httpOnly
+                         转译页面上的输出和输入内容,使用转移符替换掉标记符号
+
+            CSRF攻击,跨站点的请求伪造,在用户已经登录的目标网站之后,诱使用户访问一个攻击页面.以用户的身份在目标网站伪造用户操作
+                防范方法:   get不修改数据
+                            不通过第三发网站访问到 用户cookie
+                            设置访问白名单,不接受第三方网站的请求
+                            请求验证token
+        */
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 闭包方法
+        function Fibonacci1(n) {
+            if (n <= 1) {
+                return 1
+            };
+            return Fibonacci1(n - 1) + Fibonacci1(n - 2);
+        }
+        // 递归方法
+        function Fibonacci2(n, ab = 1, ac = 1) {
+            if (n <= 1) return ac
+            return Fibonacci2(n - 1, ac, ab + ac)
+        }
+        // 循环方法
+        function Fibonacci3(n) {
+            if (n <= 1) return 1;
+            let aa = 1
+            let ab = 1
+            while (n != 0) {
+                [aa, ab] = [aa + ab, aa];
+                n--
+                console.log(aa,ab)
+            }
+            return aa
+        }
+        console.log(Fibonacci3(5));
+        
+        new Promise((relove,reject)=>{
+            reject(3)
+            relove(2)
+        }).then(x=>{
+            alert(x)
+        }).catch(y=>{
+            alert(y)
+        })
+        alert(5)
+
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

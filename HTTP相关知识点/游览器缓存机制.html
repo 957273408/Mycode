@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            游览器缓存机制 将网页的资源储存在内存或硬盘中,只能缓存get请求
+            强缓存 : 强缓存是利用http头中的Expires和Cache-Control两个字段来控制的
+            ，用来表示资源的缓存时间。强缓存中，普通刷新会忽略它，但不会清除它，
+            需要强制刷新。浏览器强制刷新，请求会带上Cache-Control:no-cache和Pragma:no-cache
+            
+            
+            Expires的字段是GMT格式的时间只要是这个时间之前发送的http请求缓存就是有效的.判断是通过比对本地时间来决定是否调用本地缓存,所以当本地时间与服务器时间相差过大时;会有一定缺陷
+            所以http1.1就推出了cacha-control,cacha-control主要是通过字段max-age值来判断,max-age是一个相对时间如max-age=3600则表示资源的有效期是3600秒
+            cacha-control除了该字段还有几个常用的设置
+                no-cacha 不使用强缓存使用协商缓存
+                no-store 不使用本地缓存
+                pubilc 可以被所有用户缓存
+            cacha-control通常与expires一起使用不过 cacha-control具有更高的优先级
+
+            协商缓存:
+                协商缓存就是由服务器来确定缓存资源是否可用，主要是通过header中的Etag/last-modify，从而让服务器判断请求资源是否可以缓存访问。
+                 通常游览器刷新会走弱缓存,忽略强缓存,只有在地址栏输入url或者连接引入资源等情况,游览器才会启用强缓存
+                Etag/if-none-match 
+                    Etag/If-None-Match返回的是一个校验码。ETag可以保证每一个资源是唯一的，资源变化都会导致ETag变化。服务器根据浏览器上送的If-None-Match值来判断是否命中缓存。
+                    与Last-Modified不一样的是，当服务器返回304 Not Modified的响应时，由于ETag重新生成过，response header中还会把这个ETag返回，即使这个ETag跟之前的没有变化。
+
+                Last-Modify/If-Modify-Since
+                    浏览器第一次请求一个资源的时候，服务器返回的header中会加上Last-Modify，Last-modify是一个时间标识该资源的最后修改时间，例如Last-Modify: Thu,31 Dec 2037 23:59:59 GMT。
+                    当浏览器再次请求该资源时，request的请求头中会包含If-Modify-Since，该值为缓存之前返回的Last-Modify。服务器收到If-Modify-Since后，根据资源的最后修改时间判断是否命中缓存。
+                    如果命中缓存，则返回304，并且不会返回资源内容，并且不会返回Last-Modify。
+                Etag优先级高于last-modify
+        */
+    </script>
+</body>
+
+</html>

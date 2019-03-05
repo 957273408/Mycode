@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 1 手写数组去重(两种方式, 补充一下:es6提供了一个新的数组去重的方法 -->
+
+
+    <script>
+        let arr = [1, 1, 2, 2, 3, 4, 4, 6, 6]
+
+        function tirm(arr) {
+            let arr2 = []
+            arr.forEach(element => {
+                if (arr2.toString().indexOf(element) == -1) {
+                    arr2.push(element)
+                }
+            });
+            return arr2
+        }
+        console.log(tirm(arr));
+        let arr2 = [...new Set(arr)]
+        console.log(arr2)
+
+        function trim2(arr) {
+            let obj = {};
+            let ar = [];
+            arr.forEach(e => {
+                if (!obj[e]) {
+                    obj[e] = e;
+                    ar.push(e)
+                }
+            })
+            return ar
+        }
+        console.log(trim2(arr))
+    </script>
+
+
+    <!-- 2 数组排序下面按照 AA  BB  CC  DD 的方式重新给数组排序
+    	    var arr=[
+            {text:'DD'},
+            {text:'CC'},
+            {text:'AA'},
+            {text:'BB'}
+        ] -->
+
+
+    <!-- <script>
+        var arr = [{
+                text: 'DD'
+            },
+            {
+                text: 'CC'
+            },
+            {
+                text: 'AA'
+            },
+            {
+                text: 'BB'
+            }
+        ]
+        ar=['a','b','c','d']
+        arr.sort((a,b)=>{
+            return ar.indexOf(a.text[0].toLocaleLowerCase())-ar.indexOf(b.text[0].toLocaleLowerCase())
+        })
+        console.log(arr);
+    </script> -->
+
+
+    <!-- 3 遍历数组常用的方法有哪些 -->
+    map/some/forEach/filter/for of/for in/常规for循环
+    <!-- 4 bind   apply   call 改变this的指向的题 -->
+    bind/apply/call 第一个参数都是this指向的对象
+    call 第二个参数的是一个参数列表
+
+    <!-- 5 项目中遇到了哪些问题是怎么解决的 -->
+    ...
+    <!-- 6 性能优化有哪些 -->
+    性能优化注意有以下几个方面:
+    html/css:
+    减少多层嵌套结构
+    引入css写在header里面script写在最底部(防止阻塞延迟dom渲染)
+    尽量不要写的行内样式(减少重绘次数)
+    服务器端:
+    引用的静态资源使用CDN
+    减少http请求(如需频繁与服务器交互使用websocset)
+    图片:
+    小图使用base64格式
+    使用精灵图
+    上传之前进行压缩图片
+    简单图片效果可以使用css完成
+    资源按需引入
+    图片懒加载技术
+    js:
+    精简代码
+    避免频繁操作dom元素,将获取的dom数据缓存起来。在内存中完成再一次性写入进dom
+    高频触发事件可以使用节流或者防抖
+    <!-- 7 vue中 使用v-for指令的时候需要注意什么 -->
+    v-for 使用时必须添加一个唯一的key属性
+    key的值尽量不要使用index(index都会指向最后一个索引)
+    v-for不要与vif使用在同一个元素上 vfor比vif具有更高的优先级
+    <!-- 8 vue文件中包含那几个部分 -->
+    template 唯一
+    script 唯一
+    style 可以有多个
+    <!-- 9 vue经常用到的指令有哪些 -->
+    v-model v-bind v-on v-if v-show v-eles v-if-else v-text v-html
+    <!-- 10 传值的方式有哪些(父子组件 非父子组件传值) -->
+    父组件向子组件传值通过 属性传值 子组件通过props选项的到值
+    子组件向父组件传值 父组件通过v-on监听一个自定义事件传入事件 子组件通过$emit调用父组件$emit第一个参数传入的是事件名,之后的参数作为事件的参数传入父组件;
+    父组件再在函数内部通过子组件传入的参数获取值
+    非父子组件传值
+    bus总线的方式 引入一个新的vue实例对象 通过这个实例对象在组件间传值
+    vuex
+    <!-- 11 vue经常用到的包有哪些 -->
+    element UI
+    <!-- 12 vue提供的api有哪些 -->
+    $emit $event $nextTick $refs $mouset $maxin $root $parent $
+    <script>
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      function test(a, b) {
+        console.log(b);
+        return {
+          test: function(c) {
+            return test(c, a);
+          }
+        };
+      }
+
+      var a = test(100);//undefind {test:}
+      a.test(200); //test(200,100) undefind
+      a.test(300); //100
+
+      var b = test(101)//undefind
+        .test(201)//101
+        .test(301);//201
+
+      var c = test(102).test(202);//undefind 102 
+
+      c.test(302);//202
+      $()[0] 
+    </script>
+  </body>
+</html>

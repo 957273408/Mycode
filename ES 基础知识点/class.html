@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // es新增的一直构造函数写法 引入类的概念
+        class Parent {
+            // 构造器获取参数列表
+            constructor(name, age) {
+                this.name = name
+                this.age = age
+            }
+            // 可以写一一些方法在原型中
+            eat() {
+                console.log(this.name + '今年多少岁' + this.age);
+            }
+        }
+        let parent = new Parent('王五', 18)
+        parent.eat()
+        class Child extends Parent {
+            constructor(...args) {
+                super(...args)
+                // super(参数)继承的参数列表 super必须写在最顶部
+                this.yellow = args[args.length - 1]
+            }
+            todo() {
+
+            }
+        }
+        let s2 = new Child('张三', 18, 'yellow')
+        console.log(s2)
+        s2.eat()
+    </script>
+</body>
+
+</html>

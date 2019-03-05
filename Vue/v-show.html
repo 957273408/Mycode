@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.6.6/vue.common.dev.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div v-if="show">123</div>
+        <div v-show='show'>show</div>
+        <!-- vif和vshow 的区别 -->
+        <!-- vif当条件不成立时不会渲染到dom
+            vshow不管条件如何都会渲染到dom,只是通过改变display;属性来控制元素的显示和隐藏
+            所以当选要频繁显示与隐藏的元素一般使用vshow.
+            而vif使用与不长用的元素,按需加载时使用
+        -->
+    </div>
+    <script>
+        let vm=new  Vue({
+            el:'#app',
+            data:{
+                show:false,
+            }
+        })
+    </script>
+</body>
+
+</html>

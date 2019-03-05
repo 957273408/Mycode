@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/vue/2.6.6/vue.common.dev.js"></script>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: #000;
+        }
+        .yel{
+            width: 50px;
+            height: 20px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="box" @click.sync='todo'>
+            <div class="yel" @click.stop='my'></div>
+        </div>
+    </div>
+    <!-- .stop 阻止事件冒泡  -->
+    <!-- .prevent 事件提交不会重复渲染页面 -->
+    <script>
+        let vm = new Vue({
+            el: '#app',
+            data: {
+                show: false,
+            },
+            methods: {
+               todo(){
+                   alert(1)
+               } ,
+               my(){
+                   alert(2)
+               }
+            },
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // promise是es6新导入的一种异步处理方案用于解决回调地狱.Promise是一个构造函数,接受一个回调函数有2个参数
+        // relove 和reject 成功 失败
+        // promise 有3个状态 pending进行中 fulfilled已成功 rejected 已失败
+        // 2个过程 relove 从pending到fulfilled rejected从pending到rejected
+        let axios = {
+            get: (url) => {
+                return new Promise((reslove, reject) => {
+                    let xhr = new XMLHttpRequest()
+                    xhr.open('get', url)
+                    // xhr.responseType = "json"
+                    xhr.setRequestHeader('Accept', 'application/json')
+                    xhr.send()
+                    xhr.onreadystatechange = handel
+
+                    function handel() {
+                        // console.log(this.status,this.readyState)
+                        // console.log(this.responseText)
+                        if ( this.readyState == 4) {
+                            reslove(JSON.parse(xhr.responseText))
+                        }
+                    }
+                })
+            }
+        }
+        axios.get('http://127.0.0.1:8888/api/private/v1/users2').then(res => {
+            console.log(res);
+        })
+        // all$race方法
+        Promise.all([s1,s2]).then(res=>{
+            console.log(res);
+            // 返回的response也是一个数组数组
+        })//参数为一个数组,数组的元素为promise对象,会等到数组内所有promise都返回relove时再返回
+        Promise.race([s1,s2]).then(res=>{
+            console.log(res);//只返回最先返回的数据
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

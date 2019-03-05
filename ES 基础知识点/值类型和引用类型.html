@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 值类型是指 string boolean number null undefined 
+        // 引用数据类型 Object Function Array Date等
+        // 两者的区别主要是储存的方式的不同, 值类型数据是储存在栈里的变量储存的是一个固定值
+        // 引用数据类型是储存在堆里的栈里储存是这片内存空间的地址 所以变量赋值的时候其实是把这个地址赋值给另一个变量
+        // 指向是同一片内存空气,所以发生改变时都会改变(值传递,共享传递)
+        let obj = {
+            x: '1',
+            y: "2"
+        }
+        let obj2 = obj;
+        obj2.x = '2'
+        console.log(obj) //{x:'2',y:'2'}
+        console.log(obj2) //{x:'2',y:'2'}
+
+        //------------------------------ 
+        function foo(a) {
+            a = a * 10;
+        }
+
+        function bar(b) {
+            b.value = 'new';
+        }
+        var a = 1;
+        var b = {
+            value: 'old'
+        };
+        foo(a);
+        bar(b);
+        console.log(a); //1
+        console.log(b); //{value:'new'}
+
+        // ------------------------------
+        var object = {
+            a: 1,
+            b: [1, 2, 3]
+        }
+        var a = object.a
+        var b = object.b
+        a = 2
+        b.push(4)
+        console.log(object, a, b) //{a:1,b:[1,2,3,4]} , 2 ,[1,2,3,4]
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

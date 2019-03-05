@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 作用域 js变量有个作用域只能在作用域内部访问
+        // 闭包就是父函数内部返回一个子函数可以在外部访问复函数内部的变量,主要用于延长变量的生命周期,将函数暴露在外部.需要注意的是在ie中使用闭包有内存泄漏问题
+
+        console.log(a) //undefined
+        var a = 100
+
+        fn('zhangsan') 
+        function fn(name) {
+            age = 20
+            console.log(name, age)// zhangsan 20
+            var age
+        }
+
+        console.log(b);//error b is no defind
+        b = 100;
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
