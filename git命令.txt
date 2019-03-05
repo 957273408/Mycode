@@ -1,0 +1,54 @@
+1. git init            初始化一个仓库
+
+2. git config --global user.name "自己的用户名"
+    git config --global user.email "自己的邮箱"
+    git config --list  查看git用户配置信息
+
+3. git add ./                            添加文件到暂存区门口
+    git status                             查看git提交的状态
+    git commit -m '提交描述'    将门口的文件拿过来放到暂存区
+
+4. 新建忽略文件 .gitignore     先配置忽略文件 在添加
+
+5. git log                       查看提交记录
+    git log --oneline       查看简洁版提交日志
+
+6. 版本回退
+    git log                            查看获取版本号
+    git reset --hard 版本号   回退到对应的版本
+
+7.  git branch 分支名字        创建分支
+     git branch                      获取分支信息
+     git checkout 分支名字    切换分支
+
+     git merge 分支名字        和并分支    
+
+
+8. 将本地仓库代码上传到远程代码仓库
+
+git remote add origin https://gitee.com/klxin/web22.git
+git push -u origin master
+
+
+9. 下拉 上传
+    git push     推送到远程仓库
+    git pull      从远程仓库下拉
+
+10.  克隆
+       git clone 仓库地址         （注意 从远程仓库克隆到本地  已经关联好了）
+
+11. 以后工作中的操作
+      11.1  现在远程创建一个仓库
+       11.2  通过git clone 仓库地址   将远程仓库克隆本地
+       11.3  git add ./     ---> git commit -m '000'  ---> git push
+        
+
+        一定要先拉git pull 在推 git push
+
+12. 自己建一个远程仓库
+      自己添加一些开发者
+      你们商量制造一些冲突 然后解决冲突重新提交
+      每一个人都要当一次管理员
+
+13.  shift + :
+       wq 强制保存并退出
