@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+         function add(a,b=1){
+             if(a==0){
+                 throw new Error('a is error')//自定义报错
+             }
+             return a+b;
+         }
+         console.log(add.length);//add.length 显示的是必须输入的参数
+
+         var app=(a,b=1)=>a+b;//let app=(a,b)=>{retrun a+b} 多行代码的方法
+         //箭头函数不能使用new 箭头函数没有原型
+         console.log(app(1));
+    </script>
+</head>
+<body>
+    
+</body>
+</html> 

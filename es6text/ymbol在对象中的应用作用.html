@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+    <script>
+        // // Symbol es6新增加的数据类型 解决es5属性名冲突的问题,symbol表示独一无二的值
+        // let f=Symbol();
+        // console.log(typeof(f));
+        // // 全局原始数据
+        // let jspang=Symbol('jspang');
+        // console.log(jspang);
+        // console.log(jspang.toString());
+
+        // // 对 key的构建
+        // let jspan=Symbol();
+        // let obj={
+        //     [jspan]:'技术胖'
+        // }
+        // console.log(obj[jspan]);
+        // obj[jspan]='web';
+        // console.log(obj[jspan]);
+
+        // sumbol  //保护数据 for in 输出不了
+        let obj={name:'jspang',skill:'web'};
+        let age=Symbol();
+        obj[age]=18;
+        console.log(obj);
+        console.log(typeof age);
+        for(let item in obj){
+            console.log(obj[item]);
+        }
+    </script>
+</body>
+</html>

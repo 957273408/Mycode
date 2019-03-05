@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // json 数组格式
+        let json={
+            '0':'jspang',
+            '1':'技术胖',
+            length:2//没有这个才是数组格式
+        }
+        // let arr=Array.from(json);//转行为数组模式
+        console.log(arr);
+        // Array.of 方法
+        //let arr1 =Array.of('1','2')
+        //console.log(arr1);
+        // find() 实例方法 传入一个匿名函数接受3个参数
+        // value
+        // let arr=[1,2,3,4,5,6]
+        console.log(arr.find(function(value,index,arr){
+            return value>3
+        }));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

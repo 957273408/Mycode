@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+    <script>
+        // fill fill(替换内容,开始索引,结束索引)
+        let arr=['jspang','技术胖','大胖比比'];
+        arr.fill('web',1,3)
+        console.log(arr);
+        // 数组循环
+        // for(of)循环 实例方法下标.keys()
+        // entries()索引加内容
+        for(let [index,val] of arr.entries()){
+            console.log(index+':'+val)
+        } 
+        // entries 方法 支持手动循环 
+        let list=arr.entries();//生成条目
+        console.log(list.next().value);
+        console.log('```````````');
+        console.log(list.next().value);
+    </script>
+<body>
+    
+</body>
+</html>

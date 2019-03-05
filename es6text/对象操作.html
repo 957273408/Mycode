@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    'user strict'
+    // let name = 'jspang';
+    // let skill='web';
+    // let obj={name:name,skill:skill}
+    // console.log(obj);
+    
+    // key 值构建
+    // let key='skill'
+    // var obj={
+    //     [key]:'web'
+    // }
+    // console.log(obj);
+
+    // 自定义对象的方法
+    // let obj={
+    //     add:function(a,b){
+    //         return a+b;
+    //     }
+    // }
+    // console.log(obj.add(1,2));
+
+    // is()
+    let obj={name:'jspang'}
+    let obj1={name:'jspang'}
+    console.log(Object.is(obj.name,obj1.name));
+    
+    // 区别
+    console.log(+0===-0);//true
+    console.log(NaN==NaN);//false
+    // ===同值相等
+    console.log(Object.is(+0,-0));//false
+    console.log(Object.is(NaN,NaN));//trun
+    // is() 严格相等
+
+    // assign 合并对象
+    let a={a:'jspang'};
+    let b={b:'技术胖'};
+    let c={c:'web'};
+    let d=Object.assign(a,b,c);
+    console.log(a);
+</script>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // function Book(title,pages,isbn){
+        //     this.title=title;
+        //     this.pages=pages;
+        //     this.isbn=isbn;
+        // }
+        // Book.prototype.say=function(){
+        //     console.log(this.title);
+        // }
+        // let s1=new Book('zs',12,'web');
+        // console.log(s1.say());
+        class Book{
+            constructor(title,age,word) {
+                this.title=title;
+                this.age=age;
+                this.word=word;
+            }//形参和函数体
+            say(){
+                console.log(this.title);
+            }//实例方法
+        }
+        let s2=new Book('ls',14,'web')
+        s2.say()
+
+        //继承 extends  super
+        class Itbook extends Book{
+            constructor (title,age,word){
+                super(title,age,word);
+            }
+        }
+        let s3=new Itbook('ww',16,'web')
+        console.log(s3);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

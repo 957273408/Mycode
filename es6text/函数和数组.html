@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let json={
+            a:'jspang',
+            b:'技术胖'
+        }
+        function fun({a,b}){
+            console.log(a,b);
+        }
+        fun(json)
+        // 对象的函数解构
+
+        // 数组解构
+        let arr=['jspang','技术胖','前端教程']
+        function fun(a,b,c){
+            console.log(a,b,c);
+        }
+        fun(...arr)
+        // in 的用法
+        let obj={
+            a:'jspang',
+            b:"技术胖"
+        }
+        console.log('a' in obj);//obj 是否有a 这个字符
+        console.log(0 in arr);//0这个位置是否是一个空位
+        
+        // 数组遍历
+        arr.forEach((val,key)=>{
+            
+        })
+    </script>
+</body>
+</html>

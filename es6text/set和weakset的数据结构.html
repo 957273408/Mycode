@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // set 一种数据结构里面放的都是数组
+        let setArr=new Set(['jspang','技术胖','web']);
+        // console.log(setArr);
+        // set 的增删查
+        setArr.add('前端职场');//增加方法 set里面的数组不允许重复
+        // has 查找
+        console.log(setArr.has('jspang'));//返回 turn false
+        // clear 全部清除 delete 删除单个
+        // setArr.clear();
+        setArr.delete('jspang')
+        console.log(setArr);
+
+        // set 输出方法
+        // 1 for of
+        for(let item of setArr){
+            console.log(item);
+        }
+        // 2 for each
+        setArr.forEach((value) => {
+            console.log(value);
+        });
+        // 3 size 长度
+        console.log(setArr.size);
+
+        // weakset 放对象的一种格式 不能直接赋值 需要add 添加
+        let weakobj=new WeakSet()
+        let obj={a:'jspang',b:'技术胖'}
+        weakobj.add(obj);
+        console.log(weakobj);
+
+    </script>
+</body>
+</html>
